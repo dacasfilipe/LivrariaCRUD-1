@@ -15,22 +15,20 @@ const Contato = ({
   return (
     <Card style={{ width: '18rem' }} className="book">
       <Card.Body>
-        <Card.Title className="book-title">{bookname}</Card.Title>
+        <Card.Title className="book-title">{nome}</Card.Title>
         <div className="book-details">
           <div>Nome: {nome}</div>
           <div>Telefone: {telefone} </div>
           <div>Email: {email} </div>
-          <div>Data de Nascimento: {new Date(date).toDateString()}</div>
+          <div>Data de Nascimento: {new Date(datanascimento).toDateString()}</div>
         </div>
         <Button variant="primary" onClick={() => history.push(`/edit/${id}`)}>
           Edit
         </Button>{' '}
-        <Button variant="danger" onClick={() => handleRemoveBook(id)}>
+        <Button variant="danger" onClick={() => handleRemoveContato(id)}>
           Delete
         </Button>
       </Card.Body>
     </Card>
-  );
-};
-
-export default Book;
+  );};
+export default Contato;
