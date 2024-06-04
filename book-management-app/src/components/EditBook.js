@@ -1,24 +1,24 @@
 import React, { useContext } from 'react';
-import BookForm from './BookForm';
+import ContatoForm from './ContatoForm';
 import { useParams } from 'react-router-dom';
-import BooksContext from '../context/BookContext';
+import ContatosContext from '../context/ContatoContext';
 
-const EditBook = ({ history }) => {
-  const { books, setBooks } = useContext(BooksContext);
+const EditContato = ({ history }) => {
+  const { contatos, setContatos } = useContext(ContatosContext);
   const { id } = useParams();
-  const bookToEdit = books.find((book) => book.id === id);
+  const contatoToEdit = contatos.find((contato) => contato.id === id);
 
-  const handleOnSubmit = (book) => {
-    const filteredBooks = books.filter((book) => book.id !== id);
-    setBooks([book, ...filteredBooks]);
+  const handleOnSubmit = (contato) => {
+    const filteredContatos = contatos.filter((contato) => contato.id !== id);
+    setContatos([contato, ...filteredContatos]);
     history.push('/');
   };
 
   return (
     <div>
-      <BookForm book={bookToEdit} handleOnSubmit={handleOnSubmit} />
+      <ContatoForm contato={contatoToEdit} handleOnSubmit={handleOnSubmit} />
     </div>
   );
 };
 
-export default EditBook;
+export default EditContato;

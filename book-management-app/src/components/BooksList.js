@@ -1,28 +1,28 @@
 import React, { useContext } from 'react';
 import _ from 'lodash';
-import Book from './Book';
-import BooksContext from '../context/BookContext';
+import Contato from './Contato';
+import ContatosContext from '../context/ContatosContext';
 
-const BooksList = () => {
-  const { books, setBooks } = useContext(BooksContext);
+const ContatosList = () => {
+  const { contatos, setContatos } = useContext(ContatosContext);
 
-  const handleRemoveBook = (id) => {
-    setBooks(books.filter((book) => book.id !== id));
+  const handleRemoveContato = (id) => {
+    setContatos(contatos.filter((contato) => contato.id !== id));
   };
 
   return (
     <React.Fragment>
       <div className="book-list">
-        {!_.isEmpty(books) ? (
-          books.map((book) => (
-            <Book key={book.id} {...book} handleRemoveBook={handleRemoveBook} />
+        {!_.isEmpty(contatos) ? (
+          contatos.map((contato) => (
+            <Contato key={contato.id} {...contato} handleRemoveContato={handleRemoveContato} />
           ))
         ) : (
-          <p className="message">No books available. Please add some books.</p>
+          <p className="message">No contacts available. Please add some contacts.</p>
         )}
       </div>
     </React.Fragment>
   );
 };
 
-export default BooksList;
+export default ContatosList;
