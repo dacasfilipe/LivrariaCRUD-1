@@ -71,23 +71,23 @@ body {
     margin-bottom: 50px;
   }
   
-  .book-list {
+  .contato-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
   }
   
-  .book {
+  .contato {
     margin: 10px;
     width: 288px;
     overflow: hidden;
   
-    .book-title {
+    .contato-title {
       font-weight: bold;
     }
   
-    .book-details {
+    .contato-details {
       margin-bottom: 1rem;
   
       & > div {
